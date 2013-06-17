@@ -1,0 +1,9 @@
+[program:pypicache]
+command = ${buildout:directory}/bin/gunicorn flask_pypi_proxy.views:app -b -b 0.0.0.0:8090 
+process_name = pypiproxy
+directory = ${buildout:directory}/bin
+user=fifteen5
+redirect_stderr=True
+autostart=true
+autorestart=true
+
